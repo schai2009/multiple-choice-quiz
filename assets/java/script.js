@@ -1,23 +1,78 @@
+// GIVEN I am taking a code quiz
+// WHEN I click the start button
+// THEN a timer starts and I am presented with a question
+// WHEN I answer a question
+// THEN I am presented with another question
+// WHEN I answer a question incorrectly
+// THEN time is subtracted from the clock
+// WHEN all questions are answered or the timer reaches 0
+// THEN the game is over
+// WHEN the game is over
+// THEN I can save my initials and score
+
+//Questions Array
+
 var questions = [
     {
-        prompt: "What is the square root of 81?\n(1) 7\n(2) 9\n(3) 5\n(4) 11",
-        answer: "2"
+        question: "Which of the following code languange are used for styling",
+        choices: ["a. <html>", "b. <css>", "c. <python>", "d. <javascript>"],
+        answer: "b"
     },
     {
-        prompt: "How many megabites are in one gigabite?\n(1) 512\n(2) 100\n(3) 1,000\n(4) 1,024",
-        answer: "3"
+        question: "To upload files from local repository to github, user must use which git function?",
+        choices: ["a. <commit>", "b. <pull>", "c. <push>", "d. <add>"],
+        answer: "c"
     },
     {
-        prompt: "What is the approximate diameter of the United States?\n(1) 5000 miles\n(2) 2,600 kilometers\n(3) 2,800 miles\n(4) 12,000 kilmoeters",
-        answer: "3"
+        question: "In JavaScript, ______ is a single variable that is used to store different elements.",
+        choices: ["a. <function>", "b. <console log>", "c. <array>", "d. <loop>"],
+        answer: "c"
     },
     {
-        prompt: "What is the average life expectancy of human in 2021?\n(1) 78.99 years\n(2) 76.52 years\n(3) 66.95 years\n(4) 85.36 years",
-        answer: "1"
+        question: "An _________ is a piece of markup language used to adjust the behavior or display of an HTML element.",
+        choices: ["a. <attribute>", "b. <element>", "c. <function>", "d. <body>"],
+        answer: "a"
     },
     {
-        prompt: "What is (1*0)+6/2+1?\n(1) 2\n(2) 4\n(3) 12\n(4) 0",
-        answer: "2"
+        question: "What is a fast, small, and feature-rich JavaScript library that coders often access for support",
+        choices: ["a. <jQuery>", "b. <Bootstrap>", "c. <html>", "d. <stylesheet>"],
+        answer: "a"
     },
-]
+];
+
+// element reference
+
+//timer 
+var timer = document.getElementById("timer");
+var timeLeft = document.getElementById("timeLeft");
+var timesUp = document.getElementById("timesUp");
+
+//start quiz
+var startDiv = document.getElementById("start");
+var startQuizBtn = document.getElementById("start-quiz-button");
+
+//buttons and questions
+var questionDiv = document.getElementById("questionDiv");
+var questionTitle = document.getElementById("questionTitle");
+var choiceA = document.getElementById("btn0");
+var choiceB = document.getElementById("btn1");
+var choiceC = document.getElementById("btn2");
+var choiceD = document.getElementById("btn3");
+var answerCheck = document.getElementById("answerCheck");
+
+var summary = document.getElementById("summary");
+var submitInitialBtn = document.getElementById("submitInitialBtn");
+var initialInput = document.getElementById("initialInput");
+var everything = document.getElementById("everything");
+
+//score
+var highScoreSection = document.getElementById("highScoreSection");
+var finalScore = document.getElementById("finalScore");
+
+//complete and restart quiz
+var goBackBtn = document.getElementById("goBackBtn");
+var clearHighScoreBtn = document.getElementById("clearHighScoreBtn"); 
+var viewHighScore = document.getElementById("viewHighScore");
+var listOfHighScores = document.getElementById("listOfHighScores");
+
 
