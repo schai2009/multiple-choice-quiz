@@ -107,3 +107,7 @@ function newQuiz() {
 
     showQuiz();
 };
+
+function showQuiz() {
+    nextQuestion();
+}
