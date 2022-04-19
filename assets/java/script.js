@@ -75,4 +75,35 @@ var clearHighScoreBtn = document.getElementById("clearHighScoreBtn");
 var viewHighScore = document.getElementById("viewHighScore");
 var listOfHighScores = document.getElementById("listOfHighScores");
 
+//
+var scoreResult;
+var questionIndex = 0;
+var correctAns = 0;
+var questionNum = 0;
 
+//Start button and start timer
+var totalTime = 60;
+function newQuiz() {
+    questionIndex = 0;
+    totalTime = 600;
+    timeLeft.textContent = totalTime;
+    initialInput.textContent = "";
+
+    startDiv.style.display = "none";
+    questionDiv.style.display = "block";
+    timer.style.display = "block";
+    timesUp.style.display = "none";
+
+    var startTimer = setInterval(function() {
+        totalTime--;
+        timeLeft.textContent = totalTime;
+        if(totalTime <= 0) {
+            clearInterval(startTimer);
+            if (questionIndex < questions.length - 1) {
+                gameOver();
+            }
+        }
+    },1000);
+
+    showQuiz();
+};
